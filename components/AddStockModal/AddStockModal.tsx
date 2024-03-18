@@ -96,6 +96,7 @@ export default function AddStockModal({
         <List sx={{ maxHeight: 200, overflow: "auto", my: 2 }}>
           {filteredCoins.map((coin) => (
             <ListItem
+              sx={{ cursor: "pointer", "&:hover": { bgcolor: "grey.200" } }}
               key={coin.symbol}
               onClick={() => {
                 setSymbol(coin.symbol);
