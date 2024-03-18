@@ -7,7 +7,7 @@ import { usePortfolio } from "@/context/PortfolioContext";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-export const PortfolioPieChart = () => {
+export default function PortfolioPieChart() {
   const { portfolio } = usePortfolio();
 
   const data = {
@@ -38,4 +38,4 @@ export const PortfolioPieChart = () => {
   };
 
   return <Pie data={data} />;
-};
+}
