@@ -1,6 +1,6 @@
 import HomePageLayout from "@/components/HomePageLayout";
-import { PortfolioPieChart } from "@/components/PortfolioPieChart/PortfolioPieChart";
 import LeftArea from "@/components/LeftArea";
+import PortfolioPieChart from "@/components/PortfolioPieChart";
 
 export default function Home() {
   return (

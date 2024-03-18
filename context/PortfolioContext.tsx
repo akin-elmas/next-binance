@@ -1,4 +1,5 @@
 "use client";
+
 import React, {
   createContext,
   useContext,
@@ -26,12 +27,16 @@ export const PORTFOLIO_STORAGE_KEY = "userPortfolio";
 
 export const PortfolioProvider = ({ children }: { children: ReactNode }) => {
   const [portfolio, setPortfolio] = useState<Asset[]>(() => {
-    const storedPortfolio = localStorage?.getItem(PORTFOLIO_STORAGE_KEY);
+    if (typeof window === "undefined") return [];
+
+    const storedPortfolio = localStorage.getItem(PORTFOLIO_STORAGE_KEY);
     return storedPortfolio ? JSON.parse(storedPortfolio) : [];
   });
 
   useEffect(() => {
-    localStorage.setItem(PORTFOLIO_STORAGE_KEY, JSON.stringify(portfolio));
+    if (typeof window !== "undefined") {
+      localStorage.setItem(PORTFOLIO_STORAGE_KEY, JSON.stringify(portfolio));
+    }
   }, [portfolio]);
 
   const addOrUpdateAsset = (symbol: string, quantity: number) => {
