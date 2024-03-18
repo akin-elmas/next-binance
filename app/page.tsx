@@ -1,4 +1,4 @@
-import HomePageLayout from "@/Layout/HomePageLayout";
+import HomePageLayout from "@/components/HomePageLayout";
 import { PortfolioPieChart } from "@/components/Chart/Chart";
 import LeftArea from "@/components/LeftArea";
 
